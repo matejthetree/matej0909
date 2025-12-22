@@ -33,34 +33,113 @@ const journeySections = [
 ];
 
 // Decorative floating leaf
-const FloatingLeaf = ({ delay = 0, side = 'left' }: { delay?: number; side?: 'left' | 'right' }) => (
-  <motion.div
-    className={`absolute ${side === 'left' ? 'left-4 md:left-12' : 'right-4 md:right-12'} w-8 h-12 text-[#2d4a2d]/30`}
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay, duration: 1 }}
-  >
-    <motion.svg
-      viewBox="0 0 40 60"
-      fill="currentColor"
-      className="w-full h-full"
-      animate={{
-        y: [0, -10, 0],
-        rotate: side === 'left' ? [0, 5, 0] : [0, -5, 0],
-      }}
-      transition={{
-        duration: 8,
-        repeat: Infinity,
-        ease: 'easeInOut',
-        delay,
-      }}
+const FloatingLeaf = ({ delay = 0, side = 'left', scrollYProgress }: { delay?: number; side?: 'left' | 'right', scrollYProgress: any }) => {
+  // Adjusted for section-relative progress (0 to 1)
+  // 0: entering viewport (from bottom)
+  // 0.5: center of viewport
+  // 1: leaving viewport (to top)
+
+  // Create a gentle floating effect that tracks the section
+  const leafY = useTransform(scrollYProgress, [0, 0.5, 1], [-50, 0, 50]);
+  const leafOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+
+  return (
+    <motion.div
+        className={`absolute top-1/2 transform -translate-y-1/2 ${side === 'left' ? '-left-8 md:-left-16' : '-right-8 md:-right-16'} w-12 h-16 text-[#2d4a2d]/30 pointer-events-none`}
+        style={{ y: leafY, opacity: leafOpacity }}
+        transition={{ delay, duration: 1 }}
     >
-      <path d="M20 0 C10 12 3 25 3 38 C3 51 10 58 20 60 C30 58 37 51 37 38 C37 25 30 12 20 0 Z" />
-      <path d="M20 15 C22 25 22 40 20 55" fill="none" stroke="#1a2e1a" strokeWidth="1" opacity="0.5" />
-    </motion.svg>
-  </motion.div>
-);
+        <motion.svg
+        viewBox="0 0 40 60"
+        fill="currentColor"
+        className="w-full h-full"
+        animate={{
+            y: [0, -15, 0],
+            rotate: side === 'left' ? [0, 10, 0] : [0, -10, 0],
+        }}
+        transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay,
+        }}
+        >
+        <path d="M20 0 C10 12 3 25 3 38 C3 51 10 58 20 60 C30 58 37 51 37 38 C37 25 30 12 20 0 Z" />
+        <path d="M20 15 C22 25 22 40 20 55" fill="none" stroke="#1a2e1a" strokeWidth="1" opacity="0.5" />
+        </motion.svg>
+    </motion.div>
+  );
+};
+
+const JourneySection = ({ section, index }: { section: typeof journeySections[0], index: number }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  return (
+    <motion.div
+      ref={ref}
+      className="relative"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-100px' }}
+      transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {/* Decorative leaves synchronized with this section */}
+      <FloatingLeaf delay={index * 0.2} side={index % 2 === 0 ? 'left' : 'right'} scrollYProgress={scrollYProgress} />
+
+      {/* Timeline node */}
+      <motion.div
+        className="absolute left-1/2 -translate-x-1/2 -top-6 w-4 h-4 rounded-full bg-[#1a120d] border-2 border-[#c9a227]/50 hidden md:block z-10"
+        whileInView={{
+          boxShadow: [
+            '0 0 0 0 rgba(201, 162, 39, 0)',
+            '0 0 20px 10px rgba(201, 162, 39, 0.2)',
+            '0 0 0 0 rgba(201, 162, 39, 0)',
+          ],
+        }}
+        viewport={{ once: true }}
+        transition={{ duration: 2, delay: 0.5 }}
+      />
+
+      {/* Content */}
+      <div className={`md:w-5/12 ${index % 2 === 0 ? 'md:mr-auto md:pr-12' : 'md:ml-auto md:pl-12'}`}>
+        <motion.span
+          className="text-xs tracking-[0.3em] uppercase text-[#c9a227]/50 mb-3 block"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+        >
+          Chapter {index + 1}
+        </motion.span>
+
+        <h2 className="text-3xl md:text-4xl text-[#f5f0e6] mb-6 glow-gold">
+          {section.title}
+        </h2>
+
+        <div className={`text-lg leading-relaxed ${section.placeholder ? 'text-[#f5f0e6]/30 italic' : 'text-[#f5f0e6]/60'}`}>
+          {section.content.split('\n').map((paragraph, i) => (
+            <p key={i} className="mb-4 last:mb-0">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+
+        {/* Decorative underline */}
+        <motion.div
+          className="w-16 h-px bg-gradient-to-r from-[#c9a227]/40 to-transparent mt-8"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+        />
+      </div>
+    </motion.div>
+  );
+};
 
 export default function Journey() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -152,65 +231,7 @@ export default function Journey() {
 
           <div className="max-w-4xl mx-auto space-y-32">
             {journeySections.map((section, index) => (
-              <motion.div
-                key={section.id}
-                className="relative"
-                initial={{ opacity: 0, y: 60 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-100px' }}
-                transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              >
-                {/* Decorative leaves */}
-                <FloatingLeaf delay={index * 0.2} side={index % 2 === 0 ? 'left' : 'right'} />
-
-                {/* Timeline node */}
-                <motion.div
-                  className="absolute left-1/2 -translate-x-1/2 -top-6 w-4 h-4 rounded-full bg-[#1a120d] border-2 border-[#c9a227]/50 hidden md:block"
-                  whileInView={{
-                    boxShadow: [
-                      '0 0 0 0 rgba(201, 162, 39, 0)',
-                      '0 0 20px 10px rgba(201, 162, 39, 0.2)',
-                      '0 0 0 0 rgba(201, 162, 39, 0)',
-                    ],
-                  }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 2, delay: 0.5 }}
-                />
-
-                {/* Content */}
-                <div className={`md:w-5/12 ${index % 2 === 0 ? 'md:mr-auto md:pr-12' : 'md:ml-auto md:pl-12'}`}>
-                  <motion.span
-                    className="text-xs tracking-[0.3em] uppercase text-[#c9a227]/50 mb-3 block"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 }}
-                  >
-                    Chapter {index + 1}
-                  </motion.span>
-
-                  <h2 className="text-3xl md:text-4xl text-[#f5f0e6] mb-6 glow-gold">
-                    {section.title}
-                  </h2>
-
-                  <div className={`text-lg leading-relaxed ${section.placeholder ? 'text-[#f5f0e6]/30 italic' : 'text-[#f5f0e6]/60'}`}>
-                    {section.content.split('\n').map((paragraph, i) => (
-                      <p key={i} className="mb-4 last:mb-0">
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
-
-                  {/* Decorative underline */}
-                  <motion.div
-                    className="w-16 h-px bg-gradient-to-r from-[#c9a227]/40 to-transparent mt-8"
-                    initial={{ scaleX: 0 }}
-                    whileInView={{ scaleX: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5 }}
-                  />
-                </div>
-              </motion.div>
+              <JourneySection key={section.id} section={section} index={index} />
             ))}
           </div>
         </section>
@@ -268,6 +289,9 @@ export default function Journey() {
         <Contact variant="section" />
         <Contact variant="footer" />
       </div>
+
+      {/* Fixed Contact Symbol */}
+      <Contact variant="floating" />
     </PageTransition>
   );
 }

@@ -30,7 +30,9 @@ export default function Navigation() {
           >
             <span className="opacity-60 group-hover:opacity-100 transition-opacity">M</span>
             <span className="text-[#f5f0e6]/80 mx-1">·</span>
-            <span className="opacity-60 group-hover:opacity-100 transition-opacity">A</span>
+            <span className="opacity-60 group-hover:opacity-100 transition-opacity">9</span>
+            <span className="text-[#f5f0e6]/80 mx-1">·</span>
+            <span className="opacity-60 group-hover:opacity-100 transition-opacity">9</span>
           </motion.div>
         </Link>
 

@@ -4,6 +4,39 @@ import PageTransition from '../components/PageTransition';
 import Contact from '../components/Contact';
 import Newsletter from '../components/Newsletter';
 
+const TobaccoLeafIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 100 100"
+    className={`w-full h-full ${className}`}
+    fill="currentColor"
+    // Custom path for a tobacco leaf
+  >
+    <path d="M50 0C35 20 20 40 20 60C20 80 35 95 50 100C65 95 80 80 80 60C80 40 65 20 50 0Z M50 20C55 35 55 55 50 85C45 55 45 35 50 20Z" />
+  </svg>
+);
+
+const CeremonialVesselIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 100 100"
+    className={`w-full h-full ${className}`}
+    fill="currentColor"
+    // Custom path for a ceremonial vessel
+  >
+    <path d="M30 90H70V80H30V90ZM25 75H75L70 10H30L25 75ZM40 30H60L55 15H45L40 30Z" />
+  </svg>
+);
+
+const BirchBranchIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 100 100"
+    className={`w-full h-full ${className}`}
+    fill="currentColor"
+    // Custom path for a birch branch with leaves
+  >
+    <path d="M50 5C45 15 40 30 40 40M50 5C55 15 60 30 60 40M40 40C30 45 20 55 20 65M60 40C70 45 80 55 80 65M20 65C10 70 5 80 5 90M80 65C90 70 95 80 95 90" />
+  </svg>
+);
+
 const offerings = [
   {
     id: 'tobacco',
@@ -17,11 +50,8 @@ const offerings = [
       'Online and in-person options',
       'Integration support included',
     ],
-    icon: (
-      <svg viewBox="0 0 60 100" className="w-full h-full" fill="currentColor" opacity="0.6">
-        <path d="M30 0 C15 20 5 40 5 60 C5 80 15 95 30 100 C45 95 55 80 55 60 C55 40 45 20 30 0 Z M30 20 C35 35 35 55 30 85 C25 55 25 35 30 20 Z" />
-      </svg>
-    ),
+    icon: <TobaccoLeafIcon className="w-full h-full text-amber-700 opacity-60" />,
+    cornerIcon: TobaccoLeafIcon,
   },
   {
     id: 'ceremonies',
@@ -35,14 +65,8 @@ const offerings = [
       'Safe, held container',
       'Experienced facilitation',
     ],
-    icon: (
-      <svg viewBox="0 0 48 48" className="w-full h-full" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M24 4v8" />
-        <circle cx="24" cy="20" r="8" />
-        <path d="M16 28c-4 4-8 12-8 16h32c0-4-4-12-8-16" fill="currentColor" opacity="0.3" />
-        <path d="M20 20c0 0 4 4 8 0" />
-      </svg>
-    ),
+    icon: <CeremonialVesselIcon className="w-full h-full text-emerald-700 opacity-60" />,
+    cornerIcon: CeremonialVesselIcon,
   },
   {
     id: 'dieta',
@@ -56,14 +80,8 @@ const offerings = [
       'Online guidance throughout',
       'Optional in-person residence',
     ],
-    icon: (
-      <svg viewBox="0 0 48 48" className="w-full h-full" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M24 44V24" />
-        <path d="M24 24c-8 0-12-8-12-16 4 4 8 4 12 4s8 0 12-4c0 8-4 16-12 16z" fill="currentColor" opacity="0.3" />
-        <circle cx="24" cy="8" r="4" />
-        <path d="M16 40l8 4 8-4" strokeWidth="1" />
-      </svg>
-    ),
+    icon: <BirchBranchIcon className="w-full h-full text-stone-600 opacity-60" />,
+    cornerIcon: BirchBranchIcon,
   },
   {
     id: 'talks',
@@ -85,6 +103,7 @@ const offerings = [
         <path d="M8 16l4 4-4 4M40 16l-4 4 4 4" />
       </svg>
     ),
+    cornerIcon: TobaccoLeafIcon, // Reusing TobaccoLeafIcon for talks
   },
 ];
 
@@ -109,6 +128,35 @@ const itemVariants = {
       ease: [0.22, 1, 0.36, 1] as const,
     },
   },
+};
+
+const CornerDecorations = ({ Icon }: { Icon: React.ComponentType<{ className?: string }> }) => {
+  if (!Icon) return null;
+  return (
+    <>
+      {/* Top Left */}
+      <motion.div
+        className="absolute -top-4 -left-4 w-12 h-12 text-[#c9a227] pointer-events-none opacity-10"
+        variants={{
+          hover: { opacity: 0.3, rotate: 15, scale: 1.1 }
+        }}
+        transition={{ duration: 0.8 }}
+      >
+        <Icon className="w-full h-full" />
+      </motion.div>
+
+      {/* Bottom Right */}
+      <motion.div
+        className="absolute -bottom-4 -right-4 w-12 h-12 text-[#c9a227] pointer-events-none opacity-10"
+        variants={{
+          hover: { opacity: 0.3, rotate: -15, scale: 1.1 }
+        }}
+        transition={{ duration: 0.8 }}
+      >
+        <Icon className="w-full h-full transform scale-x-[-1]" />
+      </motion.div>
+    </>
+  );
 };
 
 export default function Offerings() {
@@ -171,10 +219,14 @@ export default function Offerings() {
               <motion.div
                 key={offering.id}
                 variants={itemVariants}
-                className={`grid md:grid-cols-2 gap-8 items-center ${
+                whileHover="hover"
+                className={`grid md:grid-cols-2 gap-8 items-center relative p-6 rounded-2xl transition-colors duration-500 hover:bg-[#1a120d]/30 ${
                   index % 2 === 1 ? 'md:grid-flow-dense' : ''
                 }`}
               >
+                {/* Corner Decorations */}
+                {offering.cornerIcon && <CornerDecorations Icon={offering.cornerIcon} />}
+
                 {/* Icon / Visual side */}
                 <motion.div
                   className={`relative aspect-square max-w-md mx-auto ${
@@ -265,6 +317,9 @@ export default function Offerings() {
         <Contact variant="section" />
         <Contact variant="footer" />
       </div>
+
+      {/* Fixed Contact Symbol */}
+      <Contact variant="floating" />
     </PageTransition>
   );
 }

@@ -3,6 +3,7 @@ import ParallaxBackground from '../components/ParallaxBackground';
 import Portal from '../components/Portal';
 import PageTransition from '../components/PageTransition';
 import Newsletter from '../components/Newsletter';
+import Contact from '../components/Contact';
 
 // Icons for portals
 const OfferingsIcon = () => (
@@ -47,8 +48,12 @@ export default function Hub() {
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             className="mb-6"
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl text-gold-gradient glow-gold animate-flicker tracking-wide">
-              Matej 0909
+            <h1 className="text-5xl md:text-7xl lg:text-8xl text-gold-gradient glow-gold animate-flicker tracking-wide flex items-center justify-center gap-2 md:gap-4" style={{ fontVariantNumeric: 'lining-nums' }}>
+              <span>M</span>
+              <span className="text-[#c9a227]/60 text-3xl md:text-5xl lg:text-6xl leading-none">✦</span>
+              <span className="tabular-nums">9</span>
+              <span className="text-[#c9a227]/60 text-3xl md:text-5xl lg:text-6xl leading-none">✦</span>
+              <span className="tabular-nums">9</span>
             </h1>
           </motion.div>
 
@@ -135,25 +140,10 @@ export default function Hub() {
           </motion.div>
         </div>
 
-        {/* Bottom scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2 }}
-        >
-          <motion.div
-            className="flex flex-col items-center gap-2 text-[#c9a227]/40"
-            animate={{ y: [0, 5, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <span className="text-xs tracking-[0.3em] uppercase">Enter</span>
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M12 5v14M19 12l-7 7-7-7" />
-            </svg>
-          </motion.div>
-        </motion.div>
       </div>
+
+      {/* Fixed Contact Symbol */}
+      <Contact variant="floating" />
     </PageTransition>
   );
 }

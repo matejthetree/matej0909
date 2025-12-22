@@ -8,7 +8,7 @@ export default function Contact({ variant = 'footer' }: ContactProps) {
   if (variant === 'floating') {
     return (
       <motion.div
-        className="fixed bottom-6 right-6 z-40 group"
+        className="fixed bottom-6 right-6 z-50 group" // Increased z-index to z-50 to ensure visibility above all other content including navigation
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.5 }}

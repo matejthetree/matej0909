@@ -83,11 +83,32 @@ export default function Events() {
 
             {/* Main featured card */}
             <motion.div
-              className="relative overflow-hidden rounded-2xl ceremonial-border bg-gradient-to-br from-[#1a120d]/90 to-[#0a0908]/95 backdrop-blur-sm"
+              className="relative overflow-hidden rounded-2xl border border-amber-500/30 bg-[#f5f0e6]/5 shadow-2xl backdrop-blur-md"
+              style={{
+                boxShadow: '0 0 20px rgba(201, 162, 39, 0.15), inset 0 0 60px rgba(201, 162, 39, 0.05)',
+                backgroundImage: 'linear-gradient(to bottom right, rgba(245, 240, 230, 0.05), rgba(245, 240, 230, 0.02))',
+              }}
               whileHover={{ scale: 1.01 }}
               transition={{ duration: 0.5 }}
             >
-              {/* Decorative birch branches */}
+              {/* Parchment texture overlay */}
+              <div
+                className="absolute inset-0 opacity-10 pointer-events-none"
+                style={{
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+                  mixBlendMode: 'overlay'
+                }}
+              />
+
+              {/* Golden edge gradient border effect */}
+              <div className="absolute inset-0 rounded-2xl border-2 border-transparent pointer-events-none"
+                style={{
+                  background: 'linear-gradient(to bottom right, rgba(201, 162, 39, 0.4), transparent 40%, transparent 60%, rgba(201, 162, 39, 0.4)) border-box',
+                  WebkitMask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
+                  WebkitMaskComposite: 'xor',
+                  maskComposite: 'exclude'
+                }}
+              />
               <div className="absolute top-0 left-0 w-32 h-48 text-[#2d4a2d] opacity-40 -translate-x-1/4 -translate-y-1/4">
                 <BirchDecor className="w-full h-full" />
               </div>
@@ -237,6 +258,9 @@ export default function Events() {
         <Contact variant="section" />
         <Contact variant="footer" />
       </div>
+
+      {/* Fixed Contact Symbol */}
+      <Contact variant="floating" />
     </PageTransition>
   );
 }
