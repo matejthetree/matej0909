@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, useState, useEffect } from 'react';
 
 interface ParallaxBackgroundProps {
   variant?: 'hub' | 'offerings' | 'events' | 'journey';
@@ -29,11 +29,11 @@ const BirchBranch = ({ className = '' }: { className?: string }) => (
   </svg>
 );
 
-// Smoke wisp
+// Smoke wisp - using gradient instead of blur for performance
 const SmokeWisp = ({ delay = 0, x = 0 }: { delay?: number; x?: number }) => (
   <motion.div
     className="absolute bottom-0 w-20 h-40 opacity-20"
-    style={{ left: `${x}%` }}
+    style={{ left: `${x}%`, willChange: 'transform, opacity' }}
     initial={{ y: 0, opacity: 0, scale: 1 }}
     animate={{
       y: [0, -800],
@@ -48,7 +48,12 @@ const SmokeWisp = ({ delay = 0, x = 0 }: { delay?: number; x?: number }) => (
       ease: 'easeOut',
     }}
   >
-    <div className="w-full h-full rounded-full bg-gradient-to-t from-[#f5f0e6]/30 to-transparent blur-xl" />
+    <div
+      className="w-full h-full rounded-full"
+      style={{
+        background: 'radial-gradient(ellipse at center, rgba(245,240,230,0.25) 0%, rgba(245,240,230,0.1) 40%, transparent 70%)'
+      }}
+    />
   </motion.div>
 );
 
@@ -98,14 +103,23 @@ export default function ParallaxBackground({ variant = 'hub' }: ParallaxBackgrou
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
 
+  // Mobile detection for reduced animations
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   // Parallax transforms for different layers
   const y1 = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
   const y2 = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
   const y3 = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
 
-  // Generate random positions for elements
+  // Generate random positions for elements - reduced on mobile
   const leaves = useMemo(() =>
-    Array.from({ length: 6 }, (_, i) => ({
+    Array.from({ length: isMobile ? 2 : 6 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
@@ -113,16 +127,16 @@ export default function ParallaxBackground({ variant = 'hub' }: ParallaxBackgrou
       rotation: Math.random() * 360,
       delay: Math.random() * 5,
     })),
-  []);
+  [isMobile]);
 
   const embers = useMemo(() =>
-    Array.from({ length: 15 }, (_, i) => ({
+    Array.from({ length: isMobile ? 4 : 15 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
       delay: Math.random() * 3,
     })),
-  []);
+  [isMobile]);
 
   // Background gradient based on variant
   const gradients = {
@@ -139,7 +153,7 @@ export default function ParallaxBackground({ variant = 'hub' }: ParallaxBackgrou
       style={{ background: gradients[variant] }}
     >
       {/* Far layer - Birch silhouettes and mist */}
-      <motion.div className="absolute inset-0 opacity-20" style={{ y: y1 }}>
+      <motion.div className="absolute inset-0 opacity-20" style={{ y: y1, willChange: 'transform' }}>
         <div className="absolute left-[5%] top-[10%] text-[#2d4a2d]/40 w-32 h-64">
           <BirchBranch className="w-full h-full" />
         </div>
@@ -155,7 +169,7 @@ export default function ParallaxBackground({ variant = 'hub' }: ParallaxBackgrou
       </motion.div>
 
       {/* Mid layer - Floating leaves and smoke */}
-      <motion.div className="absolute inset-0" style={{ y: y2 }}>
+      <motion.div className="absolute inset-0" style={{ y: y2, willChange: 'transform' }}>
         {leaves.map((leaf) => (
           <motion.div
             key={leaf.id}
@@ -181,15 +195,19 @@ export default function ParallaxBackground({ variant = 'hub' }: ParallaxBackgrou
           </motion.div>
         ))}
 
-        {/* Smoke wisps */}
-        <SmokeWisp delay={0} x={20} />
-        <SmokeWisp delay={5} x={50} />
-        <SmokeWisp delay={10} x={75} />
-        <SmokeWisp delay={15} x={35} />
+        {/* Smoke wisps - skip on mobile for performance */}
+        {!isMobile && (
+          <>
+            <SmokeWisp delay={0} x={20} />
+            <SmokeWisp delay={5} x={50} />
+            <SmokeWisp delay={10} x={75} />
+            <SmokeWisp delay={15} x={35} />
+          </>
+        )}
       </motion.div>
 
       {/* Near layer - Embers and light rays */}
-      <motion.div className="absolute inset-0" style={{ y: y3 }}>
+      <motion.div className="absolute inset-0" style={{ y: y3, willChange: 'transform' }}>
         {embers.map((ember) => (
           <Ember key={ember.id} x={ember.x} y={ember.y} delay={ember.delay} />
         ))}
@@ -200,9 +218,14 @@ export default function ParallaxBackground({ variant = 'hub' }: ParallaxBackgrou
         <LightRay angle={8} x={85} delay={8} />
       </motion.div>
 
-      {/* Golden ambient glow at center bottom */}
+      {/* Golden ambient glow at center bottom - using gradient instead of blur */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] opacity-20">
-        <div className="w-full h-full bg-gradient-radial from-[#c9a227]/30 via-[#c9a227]/10 to-transparent rounded-full blur-3xl" />
+        <div
+          className="w-full h-full rounded-full"
+          style={{
+            background: 'radial-gradient(ellipse at center, rgba(201,162,39,0.25) 0%, rgba(201,162,39,0.08) 40%, transparent 70%)'
+          }}
+        />
       </div>
     </div>
   );

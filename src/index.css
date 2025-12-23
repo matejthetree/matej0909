@@ -219,7 +219,7 @@ a:hover {
   background: var(--color-gold-dark);
 }
 
-/* Noise texture overlay */
+/* Noise texture overlay - using static pattern for performance */
 .noise-overlay::before {
   content: '';
   position: fixed;
@@ -228,8 +228,12 @@ a:hover {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABhGlDQ1BJQ0MgcHJvZmlsZQAAeJx9kT1Iw0AcxV9TpSoVBzuIOGSoThZERRy1CkWoEGqFVh1MLv2CJg1Jiouj4Fpw8GOx6uDirKuDqyAIfoC4uTkpukiJ/0sKLWI8OO7Hu3uPu3eAUC8zzeoYBzTdNlOJuJjJroqhVwTRiz4MISozs4xZSUrCc3zdw8fXuyjP8j7359hj5iwGBETiWWaYNvEG8fSmbXDeJ46woqwSnxOPmnRB4keuKx6/cS64LPDMiJlOzRNHiMVCGytsrKYGq8QTxFFV0ylfyLisct7irJWrrHlP/sJwTl9Z5jrNISJYxBJECJBRQRkl2IjSrpNiIUXncR//sOuXyKWQqwRGjgVUoEF2/eB/8Ltbqzg54SWFE0D3i+N8DAOhXaBRc5zvY8dpnADBZ+BKb/krdWD6k/RaS4sdAX3bwMV1S1P2gMsdoP/JkE3ZlYI0hXweeD+jb8oC/bdA96rXW2Mfpw9AmrpK3gAHh8BIgbLXPd7d1d7bv2ea/f0AcuZym6vTvUUAAAAGYktHRAD/AP8A/6C9p5MAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfoBgYALQKPRBNPAAAC60lEQVRo3u2Zu24TQRSGv7WdxE4CCYgCKJCAQEJCdFTQUFPwHjwADQ/AK1DxBDR0VBQINBQICQkhkEKaxE7i+EI8u8wsZxdZ9nptbwLK/1fWjmfOfHvmzJnLgv9lIgmwDOwAd4BrQBco+f+/AC+BJ8AeUDf8ftnw+xngNvAUaAJDIAAC+/91YBe4A6wDO4ARmN5SBQ9wFdgEbvn/N/2/BtD0gJE9E5y2G+b9+wfA+8D+N3AD2AdawIiR2gZuAo+BLeCbB5kYqYm6cNXCLtk4Dd7jJpvAFaAf+F8F+kDbfz6zezwDbgFfQ1C+J0kB2gfWgIfAZWB5CKQk6sLZdTsIngMPgCPAoUA4dOJHwHXgsACKIBfAdeAmsB3YB0aFKLzGFrAiQq0D+4G9W2fB+8A1X6eAaiDANJ+3gweCPwJLgH4gHLrPZmApJB7EUwLeBUojYN6Ru8BzD5h5x8ZE6sDNkM91DxKPxFNgM6BxIJy6BW0Am4E2EYpqQSyFAIeHfvQc2BD6dAgsBCwG/K8DW4F9fKSpI0mD+J5Z9Z3PXWB9iP0d4BhwNKBb6gE7A0QSNBb+1kKBRqq+7xbxAF+AbQEsZaALPGLLCEypg9wCtkNq6sI14HxA/1kCPAsYl+eBp4BZXQrp9e2QN0tAP2TS2L94I3AmZNz2EIqoE/aEKzx4HugdAhd7gnIoXM7xJlwJDO8CDXqCYKhBmtlDqiGRBfokWHdDxvzEfTaVuKS3hwHhoNYzE0YBOhA4fXAgfH5FeNQZHBg4aDq+qQecBi4ECjocNCEOGMWJXN6fAk4GOsBhoAMcByYE4owCuRJyf3xKIM5pP8IIsCLJkP8A+yGNFJ2h+xwGtkLqGwn7ZYlIgpAavCH6NRERnBaggQD7gVaTJFrYhxAktQRNCNi/QYjc/8IBCQIhWgIEKEWQzB6SSJ7DwAHJG/9rIfX1Cfb1gGkdD5j0FO0fOB3jk3/hJMb/8hf4B9d+QHNf7/kFAAAAAElFTkSuQmCC");
+  background-repeat: repeat;
+  background-size: 50px 50px;
+  will-change: transform;
+  transform: translateZ(0);
   z-index: 9999;
 }
 
@@ -270,7 +274,7 @@ a:hover {
   pointer-events: none;
 }
 
-/* Vignette effect */
+/* Vignette effect - layer promoted for performance */
 .vignette::after {
   content: '';
   position: fixed;
@@ -278,6 +282,8 @@ a:hover {
   pointer-events: none;
   background: radial-gradient(ellipse at center, transparent 0%, transparent 40%, rgba(5, 4, 3, 0.7) 100%);
   z-index: 100;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 /* Footer grounding gradient */
