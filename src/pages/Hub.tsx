@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import ParallaxBackground from '../components/ParallaxBackground';
 import Portal from '../components/Portal';
 import PageTransition from '../components/PageTransition';
@@ -34,6 +35,8 @@ const JourneyIcon = () => (
 );
 
 export default function Hub() {
+  const { t } = useTranslation();
+
   return (
     <PageTransition>
       <ParallaxBackground variant="hub" />
@@ -64,7 +67,7 @@ export default function Hub() {
             transition={{ duration: 1, delay: 0.4 }}
             className="text-xl md:text-2xl text-[#f5f0e6]/60 font-light tracking-wide mb-4"
           >
-            Sacred Plant Medicine
+            {t('hub.tagline')}
           </motion.p>
 
           {/* Subtitle / Essence */}
@@ -74,8 +77,7 @@ export default function Hub() {
             transition={{ duration: 1, delay: 0.6 }}
             className="text-lg text-[#f5f0e6]/40 font-light italic max-w-xl mx-auto mb-16"
           >
-            {/* Placeholder for personal essence statement */}
-            "Walking the path of healing with tobacco, plants, and ceremony"
+            "{t('hub.essence')}"
           </motion.p>
 
           {/* Decorative divider */}
@@ -105,22 +107,22 @@ export default function Hub() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-16">
             <Portal
               to="/offerings"
-              title="Offerings"
-              subtitle="Sacred Work"
+              title={t('hub.portals.offerings')}
+              subtitle={t('hub.portals.offeringsSubtitle')}
               icon={<OfferingsIcon />}
               delay={0}
             />
             <Portal
               to="/events"
-              title="Events"
-              subtitle="Gatherings"
+              title={t('hub.portals.events')}
+              subtitle={t('hub.portals.eventsSubtitle')}
               icon={<EventsIcon />}
               delay={0.2}
             />
             <Portal
               to="/journey"
-              title="My Journey"
-              subtitle="The Path"
+              title={t('hub.portals.journey')}
+              subtitle={t('hub.portals.journeySubtitle')}
               icon={<JourneyIcon />}
               delay={0.4}
             />
@@ -133,10 +135,7 @@ export default function Hub() {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
           >
-            <Newsletter
-              variant="inline"
-              description="Stay connected with upcoming events"
-            />
+            <Newsletter variant="inline" />
           </motion.div>
         </div>
 

@@ -1,0 +1,147 @@
+{
+  "nav": {
+    "sacredFire": "Sveta Vatra",
+    "home": "Početna",
+    "offerings": "Ponude",
+    "offeringsSubtitle": "Sveti Rad",
+    "events": "Događanja",
+    "eventsSubtitle": "Okupljanja",
+    "journey": "Moj Put",
+    "journeySubtitle": "Staza"
+  },
+  "languages": {
+    "en": "English",
+    "hr": "Hrvatski",
+    "de": "Deutsch",
+    "es": "Español"
+  },
+  "hub": {
+    "tagline": "Sveta Biljna Medicina",
+    "essence": "Hodanje putem iscjeljenja s duhanom, biljkama i ceremonijom",
+    "portals": {
+      "offerings": "Ponude",
+      "offeringsSubtitle": "Sveti Rad",
+      "events": "Događanja",
+      "eventsSubtitle": "Okupljanja",
+      "journey": "Moj Put",
+      "journeySubtitle": "Staza"
+    }
+  },
+  "offerings": {
+    "label": "Sveti Rad",
+    "title": "Ponude",
+    "intro": "Svaki put iscjeljenja je jedinstven. Kroz svete biljke i ceremoniju, nudim vodstvo onima koji su pozvani hodati ovim drevnim putem transformacije i sjećanja.",
+    "inquire": "Upit",
+    "tobacco": {
+      "title": "Sesije Iscjeljenja s Duhanom",
+      "subtitle": "Privatni i Grupni Rad",
+      "description": "Sveta biljka duhan koristi se tisućljećima kao moćni saveznik u iscjeliteljskom radu. Kroz ceremonijalno korištenje, povezujemo se s njenim duhom kako bismo očistili, zaštitili i otvorili puteve dubljeg razumijevanja.",
+      "details": [
+        "Privatne sesije jedan na jedan",
+        "Male grupne ceremonije",
+        "Online i opcije uživo",
+        "Uključena podrška za integraciju"
+      ]
+    },
+    "ceremonies": {
+      "title": "Biljne Ceremonije",
+      "subtitle": "Sveta Medicinska Okupljanja",
+      "description": "Održavane u ceremonijalnim prostorima s dubokim poštovanjem prema tradicijama, ova okupljanja nude prostor za duboko iscjeljenje, uvide i povezivanje s biljnim duhovima.",
+      "details": [
+        "Tradicionalno ceremonijalno okruženje",
+        "Pažljivo vodstvo u pripremi",
+        "Siguran, držan prostor",
+        "Iskusno vođenje"
+      ]
+    },
+    "dieta": {
+      "title": "Škola Biljne Dijete",
+      "subtitle": "Put Dijete",
+      "description": "Tradicionalna biljna dijeta je duboka praksa izolacije, posta i zajedništva s biljnim duhovima. Tijekom tjedana predane prakse, duboko iscjeljenje i učenje se odvija.",
+      "details": [
+        "Višetjedne obaveze",
+        "Različiti biljni saveznici dostupni",
+        "Online vodstvo tijekom cijelog procesa",
+        "Neobavezan boravak uživo"
+      ]
+    },
+    "talks": {
+      "title": "Predavanja i Govori",
+      "subtitle": "Dijeljenje Mudrosti",
+      "description": "Edukativna predavanja i govori o tradicijama biljne medicine, praksama iscjeljenja i svetom putu. Dostupno za konferencije, povlačenja, sveučilišta i privatna okupljanja.",
+      "details": [
+        "Konferencijske prezentacije",
+        "Vođenje radionica",
+        "Edukativni seminari",
+        "Online i opcije uživo"
+      ]
+    },
+    "stayInLoop": "Ostanite Informirani"
+  },
+  "events": {
+    "label": "Okupljanja",
+    "title": "Događanja i Radionice",
+    "intro": "Okupljanje u svetom prostoru pojačava iscjeljenje. Ova okupljanja su pozivi da iskoračite iz običnog vremena i uđete u zajedništvo s biljkama i jedni s drugima.",
+    "upcoming": "Nadolazeće",
+    "whiteBirch": {
+      "title": "Biljna Dijeta s Bijelom Brezom",
+      "date": "9. ožujka 2026.",
+      "duration": "2 tjedna",
+      "location": "Online + Opcije Uživo",
+      "description": "Bijela breza je moćni saveznik za čišćenje i obnovu. Ova dvotjedna dijeta nudi duboku povezanost s ovim nježnim, ali transformativnim biljnim duhom.",
+      "basePrice": "Osnovna Cijena",
+      "liveCeremonies": "Ceremonije uživo",
+      "liveCeremoniesPrice": "100 € svaka",
+      "liveCeremoniesLocation": "Aljmaš, Hrvatska",
+      "dietResidence": "Boravak na dijeti",
+      "dietResidencePrice": "50 €/dan",
+      "dietResidenceNote": "Neobavezan smještaj",
+      "inquireButton": "Upit o Ovoj Dijeti"
+    },
+    "moreGatherings": "Više Okupljanja",
+    "moreGatheringsNote": "Više okupljanja se upleće u kalendar..."
+  },
+  "journey": {
+    "label": "Staza",
+    "title": "Moj Put",
+    "essence": "Biljke su me odabrale, kao što odabiru sve koji hodaju ovim putem s iskrenošću.",
+    "readStory": "Pročitajte moju priču",
+    "chapter": "Poglavlje",
+    "sections": {
+      "beginning": {
+        "title": "Početak",
+        "content": "[Vaš rani život i sjeme koje je posađeno za ovaj put. Što vas je prvotno privuklo? Što ste tražili?]"
+      },
+      "calling": {
+        "title": "Poziv",
+        "content": "[Trenutak ili razdoblje kada su vas biljke pozvale. Vaši prvi susreti sa svetom medicinom. Prepoznavanje da je ovo vaš put.]"
+      },
+      "apprenticeship": {
+        "title": "Susret s Biljkama",
+        "content": "[Vaša obuka i šegrtovanje. Učitelji, ljudski i biljni, koji su vas vodili. Dijete, ceremonije i naučene lekcije.]"
+      },
+      "present": {
+        "title": "Put Sada",
+        "content": "[Gdje ste danas. Vaš pristup iscjeliteljskom radu. Vaša vizija i što nudite onima koji vam dolaze.]"
+      }
+    },
+    "closing": {
+      "title": "Ako Moj Put Odjekuje s Vašim...",
+      "text": "Dobrodošli su iskreni tragači koji osjećaju poziv za ovaj rad. Javite se i vidimo što medicina želi razviti."
+    }
+  },
+  "newsletter": {
+    "title": "Ostanite Povezani",
+    "description": "Budite obaviješteni kada se najave novi događaji i ceremonije.",
+    "placeholder": "vaš@email.com",
+    "subscribe": "Pretplatite se",
+    "joinCircle": "Pridružite se Krugu",
+    "walkWithMe": "Hodajte sa Mnom",
+    "walkWithMeDescription": "Primajte povremene novosti o učenjima, događanjima i razmišljanjima.",
+    "stayConnectedDescription": "Primajte novosti o novim ponudama, ceremonijama i učenjima."
+  },
+  "contact": {
+    "readyToBegin": "Spremni Započeti?",
+    "reachOut": "Javite se da razgovaramo o vašem putu"
+  }
+}

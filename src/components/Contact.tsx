@@ -1,14 +1,17 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 interface ContactProps {
   variant?: 'footer' | 'section' | 'floating';
 }
 
 export default function Contact({ variant = 'footer' }: ContactProps) {
+  const { t } = useTranslation();
+
   if (variant === 'floating') {
     return (
       <motion.div
-        className="fixed bottom-6 right-6 z-50 group" // Increased z-index to z-50 to ensure visibility above all other content including navigation
+        className="fixed bottom-6 right-6 z-50 group"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.5 }}
@@ -68,10 +71,10 @@ export default function Contact({ variant = 'footer' }: ContactProps) {
       >
         <div className="max-w-2xl mx-auto text-center">
           <h3 className="text-3xl md:text-4xl text-[#c9a227] mb-4 glow-gold">
-            Ready to Begin?
+            {t('contact.readyToBegin')}
           </h3>
           <p className="text-[#f5f0e6]/60 mb-8 text-lg">
-            Reach out to discuss your journey
+            {t('contact.reachOut')}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">

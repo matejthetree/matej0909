@@ -1,0 +1,150 @@
+{
+  "nav": {
+    "sacredFire": "Sacred Fire",
+    "home": "Home",
+    "offerings": "Offerings",
+    "offeringsSubtitle": "Sacred Work",
+    "events": "Events",
+    "eventsSubtitle": "Gatherings",
+    "journey": "My Journey",
+    "journeySubtitle": "The Path"
+  },
+  "languages": {
+    "en": "English",
+    "hr": "Hrvatski",
+    "de": "Deutsch",
+    "es": "Español"
+  },
+  "hub": {
+    "tagline": "Sacred Plant Medicine",
+    "essence": "Walking the path of healing with tobacco, plants, and ceremony",
+    "portals": {
+      "offerings": "Offerings",
+      "offeringsSubtitle": "Sacred Work",
+      "events": "Events",
+      "eventsSubtitle": "Gatherings",
+      "journey": "My Journey",
+      "journeySubtitle": "The Path"
+    }
+  },
+  "offerings": {
+    "label": "Sacred Work",
+    "title": "Offerings",
+    "intro": "Each path of healing is unique. Through sacred plants and ceremony, I offer guidance for those called to walk this ancient way of transformation and remembrance.",
+    "inquire": "Inquire",
+    "tobacco": {
+      "title": "Healing Sessions with Tobacco",
+      "subtitle": "Private & Group Work",
+      "description": "The sacred tobacco plant has been used for millennia as a powerful ally in healing work. Through ceremonial use, we connect with its spirit to cleanse, protect, and open pathways to deeper understanding.",
+      "details": [
+        "One-on-one private sessions",
+        "Small group ceremonies",
+        "Online and in-person options",
+        "Integration support included"
+      ]
+    },
+    "ceremonies": {
+      "title": "Plant Ceremonies",
+      "subtitle": "Sacred Medicine Gatherings",
+      "description": "Held in ceremonial containers with deep respect for the traditions, these gatherings offer space for profound healing, insight, and connection with the plant spirits.",
+      "details": [
+        "Traditional ceremonial setting",
+        "Careful preparation guidance",
+        "Safe, held container",
+        "Experienced facilitation"
+      ]
+    },
+    "dieta": {
+      "title": "Plant Diet School",
+      "subtitle": "The Dieta Path",
+      "description": "The traditional plant diet (dieta) is a profound practice of isolation, fasting, and communion with plant spirits. Over weeks of dedicated practice, deep healing and learning unfolds.",
+      "details": [
+        "Multi-week commitments",
+        "Various plant allies available",
+        "Online guidance throughout",
+        "Optional in-person residence"
+      ]
+    },
+    "talks": {
+      "title": "Talks & Lectures",
+      "subtitle": "Sharing Wisdom",
+      "description": "Educational talks and lectures on plant medicine traditions, healing practices, and the sacred path. Available for conferences, retreats, universities, and private gatherings.",
+      "details": [
+        "Conference presentations",
+        "Workshop facilitation",
+        "Educational seminars",
+        "Online and in-person options"
+      ]
+    },
+    "stayInLoop": "Stay in the Loop"
+  },
+  "events": {
+    "label": "Gatherings",
+    "title": "Events & Workshops",
+    "intro": "Coming together in sacred space amplifies the healing. These gatherings are invitations to step out of ordinary time and into communion with the plants and each other.",
+    "upcoming": "Upcoming",
+    "whiteBirch": {
+      "title": "Plant Diet with White Birch",
+      "date": "March 9, 2026",
+      "duration": "2 Weeks",
+      "location": "Online + In-Person Options",
+      "description": "The White Birch is a powerful ally for cleansing and renewal. This two-week dieta offers deep connection with this gentle yet transformative plant spirit.",
+      "basePrice": "Base Price",
+      "liveCeremonies": "Live ceremonies",
+      "liveCeremoniesPrice": "€100 each",
+      "liveCeremoniesLocation": "Aljmaš, Croatia",
+      "dietResidence": "Diet residence",
+      "dietResidencePrice": "€50/day",
+      "dietResidenceNote": "Optional accommodation",
+      "inquireButton": "Inquire About This Diet"
+    },
+    "moreGatherings": "More Gatherings",
+    "moreGatheringsNote": "More gatherings are being woven into the calendar..."
+  },
+  "journey": {
+    "label": "The Path",
+    "title": "My Journey",
+    "essence": "The plants chose me, as they choose all who walk this path with sincerity.",
+    "readStory": "Read my story",
+    "chapter": "Chapter",
+    "sections": {
+      "beginning": {
+        "title": "The Beginning",
+        "content": "[Your early life and the seeds that were planted for this path. What drew you initially? What were you seeking?]"
+      },
+      "calling": {
+        "title": "The Calling",
+        "content": "[The moment or period when the plants called you. Your first encounters with sacred medicine. The recognition that this was your path.]"
+      },
+      "apprenticeship": {
+        "title": "Meeting the Plants",
+        "content": "[Your training and apprenticeship. The teachers, human and plant, who guided you. The dietas, ceremonies, and lessons learned.]"
+      },
+      "present": {
+        "title": "The Path Now",
+        "content": "[Where you are today. Your approach to healing work. Your vision and what you offer to those who come to you.]"
+      }
+    },
+    "closing": {
+      "title": "If My Path Resonates With Yours...",
+      "text": "I welcome sincere seekers who feel called to this work. Reach out, and let us see what medicine wants to unfold."
+    }
+  },
+  "newsletter": {
+    "title": "Stay Connected",
+    "description": "Be notified when new events and ceremonies are announced.",
+    "placeholder": "your@email.com",
+    "subscribe": "Subscribe",
+    "sending": "Sending...",
+    "success": "Subscribed ✓",
+    "error": "Try Again",
+    "joinCircle": "Join the Circle",
+    "walkWithMe": "Walk With Me",
+    "walkWithMeDescription": "Receive occasional updates on teachings, events, and reflections.",
+    "stayConnectedDescription": "Receive updates on new offerings, ceremonies, and teachings."
+  },
+  "contact": {
+    "readyToBegin": "Ready to Begin?",
+    "reachOut": "Reach out to discuss your journey"
+  }
+}

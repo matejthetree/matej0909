@@ -1,17 +1,20 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-
-const navLinks = [
-  { to: '/', label: 'Sacred Fire', subtitle: 'Home' },
-  { to: '/offerings', label: 'Offerings', subtitle: 'Sacred Work' },
-  { to: '/events', label: 'Events', subtitle: 'Gatherings' },
-  { to: '/journey', label: 'My Journey', subtitle: 'The Path' },
-];
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
+
+  const navLinks = [
+    { to: '/', label: t('nav.sacredFire'), subtitle: t('nav.home') },
+    { to: '/offerings', label: t('nav.offerings'), subtitle: t('nav.offeringsSubtitle') },
+    { to: '/events', label: t('nav.events'), subtitle: t('nav.eventsSubtitle') },
+    { to: '/journey', label: t('nav.journey'), subtitle: t('nav.journeySubtitle') },
+  ];
 
   return (
     <>
@@ -36,17 +39,21 @@ export default function Navigation() {
           </motion.div>
         </Link>
 
-        {/* Menu button */}
-        <motion.button
-          onClick={() => setIsOpen(true)}
-          className="w-10 h-10 flex flex-col items-center justify-center gap-1.5 group"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <span className="w-6 h-px bg-[#c9a227]/60 group-hover:bg-[#c9a227] transition-colors" />
-          <span className="w-4 h-px bg-[#c9a227]/60 group-hover:bg-[#c9a227] transition-colors" />
-          <span className="w-5 h-px bg-[#c9a227]/60 group-hover:bg-[#c9a227] transition-colors" />
-        </motion.button>
+        {/* Right side: Language Switcher + Menu button */}
+        <div className="flex items-center gap-4">
+          <LanguageSwitcher />
+
+          <motion.button
+            onClick={() => setIsOpen(true)}
+            className="w-10 h-10 flex flex-col items-center justify-center gap-1.5 group"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span className="w-6 h-px bg-[#c9a227]/60 group-hover:bg-[#c9a227] transition-colors" />
+            <span className="w-4 h-px bg-[#c9a227]/60 group-hover:bg-[#c9a227] transition-colors" />
+            <span className="w-5 h-px bg-[#c9a227]/60 group-hover:bg-[#c9a227] transition-colors" />
+          </motion.button>
+        </div>
       </motion.header>
 
       {/* Full screen menu overlay */}
@@ -101,6 +108,17 @@ export default function Navigation() {
               <span className="absolute w-6 h-px bg-[#c9a227]/60 group-hover:bg-[#c9a227] transition-colors rotate-45" />
               <span className="absolute w-6 h-px bg-[#c9a227]/60 group-hover:bg-[#c9a227] transition-colors -rotate-45" />
             </motion.button>
+
+            {/* Language switcher in menu */}
+            <motion.div
+              className="absolute top-4 left-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              <LanguageSwitcher />
+            </motion.div>
 
             {/* Navigation links */}
             <nav className="relative z-10 flex flex-col items-center gap-8">

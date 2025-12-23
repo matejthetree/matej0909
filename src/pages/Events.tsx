@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import ParallaxBackground from '../components/ParallaxBackground';
 import PageTransition from '../components/PageTransition';
 import Contact from '../components/Contact';
 import Newsletter from '../components/Newsletter';
 
-// Birch branch SVG for decoration
 const BirchDecor = ({ className = '' }: { className?: string }) => (
   <svg viewBox="0 0 100 150" className={className} fill="none" stroke="currentColor" strokeWidth="1">
     <path d="M50 150 L50 0" opacity="0.3" />
@@ -20,6 +20,8 @@ const BirchDecor = ({ className = '' }: { className?: string }) => (
 );
 
 export default function Events() {
+  const { t } = useTranslation();
+
   return (
     <PageTransition>
       <ParallaxBackground variant="events" />
@@ -39,17 +41,15 @@ export default function Events() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="text-xs tracking-[0.4em] uppercase text-[#c9a227]/60">Gatherings</span>
+              <span className="text-xs tracking-[0.4em] uppercase text-[#c9a227]/60">{t('events.label')}</span>
             </motion.div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl text-gold-gradient glow-gold mb-8">
-              Events & Workshops
+              {t('events.title')}
             </h1>
 
             <p className="text-xl text-[#f5f0e6]/60 font-light leading-relaxed max-w-2xl mx-auto">
-              {/* Placeholder */}
-              Coming together in sacred space amplifies the healing. These gatherings are invitations
-              to step out of ordinary time and into communion with the plants and each other.
+              {t('events.intro')}
             </p>
           </motion.div>
         </section>
@@ -77,7 +77,7 @@ export default function Events() {
                   animate={{ opacity: [0.5, 1, 0.5] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
-                Upcoming
+                {t('events.upcoming')}
               </span>
             </motion.div>
 
@@ -134,7 +134,7 @@ export default function Events() {
                       <span className="text-4xl">🌿</span>
                       <div>
                         <h2 className="text-3xl md:text-4xl text-[#f5f0e6] glow-gold">
-                          Plant Diet with White Birch
+                          {t('events.whiteBirch.title')}
                         </h2>
                       </div>
                     </motion.div>
@@ -152,21 +152,21 @@ export default function Events() {
                           <path d="M3 10h18" />
                           <path d="M8 2v4M16 2v4" />
                         </svg>
-                        March 9, 2026
+                        {t('events.whiteBirch.date')}
                       </span>
                       <span className="flex items-center gap-2 text-[#f5f0e6]/70">
                         <svg className="w-5 h-5 text-[#c9a227]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                           <circle cx="12" cy="12" r="10" />
                           <path d="M12 6v6l4 2" />
                         </svg>
-                        2 Weeks
+                        {t('events.whiteBirch.duration')}
                       </span>
                       <span className="flex items-center gap-2 text-[#f5f0e6]/70">
                         <svg className="w-5 h-5 text-[#c9a227]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                           <circle cx="12" cy="10" r="3" />
                           <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z" />
                         </svg>
-                        Online + In-Person Options
+                        {t('events.whiteBirch.location')}
                       </span>
                     </motion.div>
 
@@ -177,9 +177,7 @@ export default function Events() {
                       viewport={{ once: true }}
                       transition={{ delay: 0.5 }}
                     >
-                      {/* Placeholder for description */}
-                      The White Birch is a powerful ally for cleansing and renewal. This two-week dieta
-                      offers deep connection with this gentle yet transformative plant spirit.
+                      {t('events.whiteBirch.description')}
                     </motion.p>
                   </div>
 
@@ -192,7 +190,7 @@ export default function Events() {
                     transition={{ delay: 0.6 }}
                   >
                     <div className="text-center mb-6">
-                      <span className="text-sm text-[#c9a227]/60 uppercase tracking-wider">Base Price</span>
+                      <span className="text-sm text-[#c9a227]/60 uppercase tracking-wider">{t('events.whiteBirch.basePrice')}</span>
                       <div className="text-4xl md:text-5xl text-[#c9a227] font-light mt-2 glow-gold">
                         €900
                       </div>
@@ -200,17 +198,17 @@ export default function Events() {
 
                     <div className="space-y-4 border-t border-[#c9a227]/10 pt-6">
                       <div className="flex justify-between items-start text-sm">
-                        <span className="text-[#f5f0e6]/50">Live ceremonies</span>
+                        <span className="text-[#f5f0e6]/50">{t('events.whiteBirch.liveCeremonies')}</span>
                         <span className="text-[#f5f0e6]/80 text-right">
-                          €100 each
-                          <span className="block text-xs text-[#f5f0e6]/40">Aljmaš, Croatia</span>
+                          {t('events.whiteBirch.liveCeremoniesPrice')}
+                          <span className="block text-xs text-[#f5f0e6]/40">{t('events.whiteBirch.liveCeremoniesLocation')}</span>
                         </span>
                       </div>
                       <div className="flex justify-between items-start text-sm">
-                        <span className="text-[#f5f0e6]/50">Diet residence</span>
+                        <span className="text-[#f5f0e6]/50">{t('events.whiteBirch.dietResidence')}</span>
                         <span className="text-[#f5f0e6]/80 text-right">
-                          €50/day
-                          <span className="block text-xs text-[#f5f0e6]/40">Optional accommodation</span>
+                          {t('events.whiteBirch.dietResidencePrice')}
+                          <span className="block text-xs text-[#f5f0e6]/40">{t('events.whiteBirch.dietResidenceNote')}</span>
                         </span>
                       </div>
                     </div>
@@ -221,7 +219,7 @@ export default function Events() {
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      Inquire About This Diet
+                      {t('events.whiteBirch.inquireButton')}
                     </motion.a>
                   </motion.div>
                 </div>
@@ -241,25 +239,19 @@ export default function Events() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl text-[#f5f0e6]/40 font-light mb-4">More Gatherings</h3>
+            <h3 className="text-2xl text-[#f5f0e6]/40 font-light mb-4">{t('events.moreGatherings')}</h3>
             <p className="text-[#f5f0e6]/30 italic mb-8">
-              More gatherings are being woven into the calendar...
+              {t('events.moreGatheringsNote')}
             </p>
 
-            {/* Newsletter signup */}
-            <Newsletter
-              title="Stay Connected"
-              description="Be notified when new events and ceremonies are announced."
-            />
+            <Newsletter />
           </motion.div>
         </section>
 
-        {/* Contact */}
         <Contact variant="section" />
         <Contact variant="footer" />
       </div>
 
-      {/* Fixed Contact Symbol */}
       <Contact variant="floating" />
     </PageTransition>
   );

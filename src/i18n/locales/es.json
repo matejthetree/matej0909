@@ -1,0 +1,147 @@
+{
+  "nav": {
+    "sacredFire": "Fuego Sagrado",
+    "home": "Inicio",
+    "offerings": "Ofertas",
+    "offeringsSubtitle": "Trabajo Sagrado",
+    "events": "Eventos",
+    "eventsSubtitle": "Encuentros",
+    "journey": "Mi Camino",
+    "journeySubtitle": "El Sendero"
+  },
+  "languages": {
+    "en": "English",
+    "hr": "Hrvatski",
+    "de": "Deutsch",
+    "es": "Español"
+  },
+  "hub": {
+    "tagline": "Medicina Sagrada de Plantas",
+    "essence": "Caminando el sendero de sanación con tabaco, plantas y ceremonia",
+    "portals": {
+      "offerings": "Ofertas",
+      "offeringsSubtitle": "Trabajo Sagrado",
+      "events": "Eventos",
+      "eventsSubtitle": "Encuentros",
+      "journey": "Mi Camino",
+      "journeySubtitle": "El Sendero"
+    }
+  },
+  "offerings": {
+    "label": "Trabajo Sagrado",
+    "title": "Ofertas",
+    "intro": "Cada camino de sanación es único. A través de plantas sagradas y ceremonia, ofrezco guía para aquellos llamados a caminar este antiguo sendero de transformación y remembranza.",
+    "inquire": "Consultar",
+    "tobacco": {
+      "title": "Sesiones de Sanación con Tabaco",
+      "subtitle": "Trabajo Privado y Grupal",
+      "description": "La planta sagrada del tabaco ha sido utilizada durante milenios como un poderoso aliado en el trabajo de sanación. A través del uso ceremonial, nos conectamos con su espíritu para limpiar, proteger y abrir caminos hacia una comprensión más profunda.",
+      "details": [
+        "Sesiones privadas individuales",
+        "Ceremonias en grupos pequeños",
+        "Opciones en línea y presenciales",
+        "Apoyo de integración incluido"
+      ]
+    },
+    "ceremonies": {
+      "title": "Ceremonias de Plantas",
+      "subtitle": "Encuentros de Medicina Sagrada",
+      "description": "Realizadas en contenedores ceremoniales con profundo respeto por las tradiciones, estos encuentros ofrecen espacio para sanación profunda, percepción y conexión con los espíritus de las plantas.",
+      "details": [
+        "Entorno ceremonial tradicional",
+        "Guía cuidadosa de preparación",
+        "Contenedor seguro y sostenido",
+        "Facilitación experimentada"
+      ]
+    },
+    "dieta": {
+      "title": "Escuela de Dieta de Plantas",
+      "subtitle": "El Camino de la Dieta",
+      "description": "La dieta tradicional de plantas es una práctica profunda de aislamiento, ayuno y comunión con espíritus de plantas. A lo largo de semanas de práctica dedicada, se despliega una sanación y aprendizaje profundos.",
+      "details": [
+        "Compromisos de varias semanas",
+        "Varios aliados vegetales disponibles",
+        "Guía en línea durante todo el proceso",
+        "Residencia presencial opcional"
+      ]
+    },
+    "talks": {
+      "title": "Charlas y Conferencias",
+      "subtitle": "Compartiendo Sabiduría",
+      "description": "Charlas y conferencias educativas sobre tradiciones de medicina vegetal, prácticas de sanación y el camino sagrado. Disponible para conferencias, retiros, universidades y encuentros privados.",
+      "details": [
+        "Presentaciones en conferencias",
+        "Facilitación de talleres",
+        "Seminarios educativos",
+        "Opciones en línea y presenciales"
+      ]
+    },
+    "stayInLoop": "Mantente Informado"
+  },
+  "events": {
+    "label": "Encuentros",
+    "title": "Eventos y Talleres",
+    "intro": "Reunirse en espacio sagrado amplifica la sanación. Estos encuentros son invitaciones a salir del tiempo ordinario y entrar en comunión con las plantas y entre nosotros.",
+    "upcoming": "Próximo",
+    "whiteBirch": {
+      "title": "Dieta de Plantas con Abedul Blanco",
+      "date": "9 de marzo de 2026",
+      "duration": "2 semanas",
+      "location": "En línea + Opciones Presenciales",
+      "description": "El Abedul Blanco es un poderoso aliado para la limpieza y renovación. Esta dieta de dos semanas ofrece una conexión profunda con este espíritu vegetal gentil pero transformador.",
+      "basePrice": "Precio Base",
+      "liveCeremonies": "Ceremonias en vivo",
+      "liveCeremoniesPrice": "100 € cada una",
+      "liveCeremoniesLocation": "Aljmaš, Croacia",
+      "dietResidence": "Residencia de dieta",
+      "dietResidencePrice": "50 €/día",
+      "dietResidenceNote": "Alojamiento opcional",
+      "inquireButton": "Consultar sobre esta Dieta"
+    },
+    "moreGatherings": "Más Encuentros",
+    "moreGatheringsNote": "Más encuentros se están tejiendo en el calendario..."
+  },
+  "journey": {
+    "label": "El Sendero",
+    "title": "Mi Camino",
+    "essence": "Las plantas me eligieron, como eligen a todos los que caminan este sendero con sinceridad.",
+    "readStory": "Lee mi historia",
+    "chapter": "Capítulo",
+    "sections": {
+      "beginning": {
+        "title": "El Comienzo",
+        "content": "[Tu vida temprana y las semillas que fueron plantadas para este camino. ¿Qué te atrajo inicialmente? ¿Qué buscabas?]"
+      },
+      "calling": {
+        "title": "El Llamado",
+        "content": "[El momento o período cuando las plantas te llamaron. Tus primeros encuentros con la medicina sagrada. El reconocimiento de que este era tu camino.]"
+      },
+      "apprenticeship": {
+        "title": "Encuentro con las Plantas",
+        "content": "[Tu entrenamiento y aprendizaje. Los maestros, humanos y vegetales, que te guiaron. Las dietas, ceremonias y lecciones aprendidas.]"
+      },
+      "present": {
+        "title": "El Camino Ahora",
+        "content": "[Dónde estás hoy. Tu enfoque del trabajo de sanación. Tu visión y lo que ofreces a quienes vienen a ti.]"
+      }
+    },
+    "closing": {
+      "title": "Si mi camino resuena con el tuyo...",
+      "text": "Doy la bienvenida a buscadores sinceros que sienten el llamado a este trabajo. Contáctame y veamos qué quiere desplegar la medicina."
+    }
+  },
+  "newsletter": {
+    "title": "Mantente Conectado",
+    "description": "Recibe notificaciones cuando se anuncien nuevos eventos y ceremonias.",
+    "placeholder": "tu@email.com",
+    "subscribe": "Suscribirse",
+    "joinCircle": "Únete al Círculo",
+    "walkWithMe": "Camina Conmigo",
+    "walkWithMeDescription": "Recibe actualizaciones ocasionales sobre enseñanzas, eventos y reflexiones.",
+    "stayConnectedDescription": "Recibe actualizaciones sobre nuevas ofertas, ceremonias y enseñanzas."
+  },
+  "contact": {
+    "readyToBegin": "¿Listo para Comenzar?",
+    "reachOut": "Contáctame para hablar sobre tu camino"
+  }
+}

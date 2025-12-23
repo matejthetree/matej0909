@@ -1,0 +1,147 @@
+{
+  "nav": {
+    "sacredFire": "Heiliges Feuer",
+    "home": "Startseite",
+    "offerings": "Angebote",
+    "offeringsSubtitle": "Heilige Arbeit",
+    "events": "Veranstaltungen",
+    "eventsSubtitle": "Zusammenkünfte",
+    "journey": "Meine Reise",
+    "journeySubtitle": "Der Weg"
+  },
+  "languages": {
+    "en": "English",
+    "hr": "Hrvatski",
+    "de": "Deutsch",
+    "es": "Español"
+  },
+  "hub": {
+    "tagline": "Heilige Pflanzenmedizin",
+    "essence": "Den Weg der Heilung mit Tabak, Pflanzen und Zeremonie gehen",
+    "portals": {
+      "offerings": "Angebote",
+      "offeringsSubtitle": "Heilige Arbeit",
+      "events": "Veranstaltungen",
+      "eventsSubtitle": "Zusammenkünfte",
+      "journey": "Meine Reise",
+      "journeySubtitle": "Der Weg"
+    }
+  },
+  "offerings": {
+    "label": "Heilige Arbeit",
+    "title": "Angebote",
+    "intro": "Jeder Heilungsweg ist einzigartig. Durch heilige Pflanzen und Zeremonie biete ich Führung für diejenigen, die berufen sind, diesen uralten Weg der Transformation und Erinnerung zu gehen.",
+    "inquire": "Anfragen",
+    "tobacco": {
+      "title": "Heilungssitzungen mit Tabak",
+      "subtitle": "Privat- & Gruppenarbeit",
+      "description": "Die heilige Tabakpflanze wird seit Jahrtausenden als kraftvoller Verbündeter in der Heilungsarbeit verwendet. Durch zeremonielle Nutzung verbinden wir uns mit ihrem Geist, um zu reinigen, zu schützen und Wege zu tieferem Verständnis zu öffnen.",
+      "details": [
+        "Einzelsitzungen",
+        "Kleine Gruppenzeremonien",
+        "Online- und Präsenzoptionen",
+        "Integrationsunterstützung inklusive"
+      ]
+    },
+    "ceremonies": {
+      "title": "Pflanzenzeremonien",
+      "subtitle": "Heilige Medizin-Zusammenkünfte",
+      "description": "In zeremoniellen Räumen mit tiefem Respekt für die Traditionen bieten diese Zusammenkünfte Raum für tiefgreifende Heilung, Einsicht und Verbindung mit den Pflanzengeistern.",
+      "details": [
+        "Traditionelles zeremonielles Setting",
+        "Sorgfältige Vorbereitungsanleitung",
+        "Sicherer, gehaltener Raum",
+        "Erfahrene Begleitung"
+      ]
+    },
+    "dieta": {
+      "title": "Pflanzendiät-Schule",
+      "subtitle": "Der Dieta-Weg",
+      "description": "Die traditionelle Pflanzendiät (Dieta) ist eine tiefgreifende Praxis der Isolation, des Fastens und der Kommunion mit Pflanzengeistern. Über Wochen hingebungsvoller Praxis entfaltet sich tiefe Heilung und Lernen.",
+      "details": [
+        "Mehrwöchige Verpflichtungen",
+        "Verschiedene Pflanzenverbündete verfügbar",
+        "Online-Begleitung durchgehend",
+        "Optionaler Aufenthalt vor Ort"
+      ]
+    },
+    "talks": {
+      "title": "Vorträge & Seminare",
+      "subtitle": "Weisheit teilen",
+      "description": "Bildungsvorträge und Seminare über Pflanzenmedizin-Traditionen, Heilpraktiken und den heiligen Weg. Verfügbar für Konferenzen, Retreats, Universitäten und private Zusammenkünfte.",
+      "details": [
+        "Konferenzpräsentationen",
+        "Workshop-Leitung",
+        "Bildungsseminare",
+        "Online- und Präsenzoptionen"
+      ]
+    },
+    "stayInLoop": "Bleiben Sie informiert"
+  },
+  "events": {
+    "label": "Zusammenkünfte",
+    "title": "Veranstaltungen & Workshops",
+    "intro": "Das Zusammenkommen im heiligen Raum verstärkt die Heilung. Diese Zusammenkünfte sind Einladungen, aus der gewöhnlichen Zeit herauszutreten und in Gemeinschaft mit den Pflanzen und miteinander zu treten.",
+    "upcoming": "Bevorstehend",
+    "whiteBirch": {
+      "title": "Pflanzendiät mit Weißer Birke",
+      "date": "9. März 2026",
+      "duration": "2 Wochen",
+      "location": "Online + Präsenzoptionen",
+      "description": "Die Weiße Birke ist ein kraftvoller Verbündeter für Reinigung und Erneuerung. Diese zweiwöchige Dieta bietet tiefe Verbindung mit diesem sanften, aber transformativen Pflanzengeist.",
+      "basePrice": "Grundpreis",
+      "liveCeremonies": "Live-Zeremonien",
+      "liveCeremoniesPrice": "100 € pro Stück",
+      "liveCeremoniesLocation": "Aljmaš, Kroatien",
+      "dietResidence": "Diät-Aufenthalt",
+      "dietResidencePrice": "50 €/Tag",
+      "dietResidenceNote": "Optionale Unterkunft",
+      "inquireButton": "Anfrage zu dieser Diät"
+    },
+    "moreGatherings": "Weitere Zusammenkünfte",
+    "moreGatheringsNote": "Weitere Zusammenkünfte werden in den Kalender eingewoben..."
+  },
+  "journey": {
+    "label": "Der Weg",
+    "title": "Meine Reise",
+    "essence": "Die Pflanzen haben mich gewählt, wie sie alle wählen, die diesen Weg mit Aufrichtigkeit gehen.",
+    "readStory": "Lesen Sie meine Geschichte",
+    "chapter": "Kapitel",
+    "sections": {
+      "beginning": {
+        "title": "Der Anfang",
+        "content": "[Ihr frühes Leben und die Samen, die für diesen Weg gepflanzt wurden. Was hat Sie anfangs angezogen? Was haben Sie gesucht?]"
+      },
+      "calling": {
+        "title": "Die Berufung",
+        "content": "[Der Moment oder die Zeit, als die Pflanzen Sie riefen. Ihre ersten Begegnungen mit heiliger Medizin. Die Erkenntnis, dass dies Ihr Weg war.]"
+      },
+      "apprenticeship": {
+        "title": "Begegnung mit den Pflanzen",
+        "content": "[Ihre Ausbildung und Lehrzeit. Die Lehrer, menschliche und pflanzliche, die Sie geführt haben. Die Dietas, Zeremonien und gelernten Lektionen.]"
+      },
+      "present": {
+        "title": "Der Weg Jetzt",
+        "content": "[Wo Sie heute stehen. Ihr Ansatz zur Heilungsarbeit. Ihre Vision und was Sie denen anbieten, die zu Ihnen kommen.]"
+      }
+    },
+    "closing": {
+      "title": "Wenn mein Weg mit Ihrem resoniert...",
+      "text": "Ich heiße aufrichtige Suchende willkommen, die sich zu dieser Arbeit berufen fühlen. Melden Sie sich, und lassen Sie uns sehen, was die Medizin entfalten möchte."
+    }
+  },
+  "newsletter": {
+    "title": "Bleiben Sie verbunden",
+    "description": "Werden Sie benachrichtigt, wenn neue Veranstaltungen und Zeremonien angekündigt werden.",
+    "placeholder": "ihre@email.com",
+    "subscribe": "Abonnieren",
+    "joinCircle": "Treten Sie dem Kreis bei",
+    "walkWithMe": "Gehen Sie mit mir",
+    "walkWithMeDescription": "Erhalten Sie gelegentliche Updates zu Lehren, Veranstaltungen und Reflexionen.",
+    "stayConnectedDescription": "Erhalten Sie Updates zu neuen Angeboten, Zeremonien und Lehren."
+  },
+  "contact": {
+    "readyToBegin": "Bereit zu beginnen?",
+    "reachOut": "Melden Sie sich, um Ihre Reise zu besprechen"
+  }
+}
